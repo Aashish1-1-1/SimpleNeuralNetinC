@@ -25,6 +25,7 @@ float cost_func(float w){
       float x=data[i][0];
       float y=w*x;
       float d=y-data[i][1];
+    //Mean square error
       result+=d*d;
   }
   result/=train_count;
@@ -37,9 +38,10 @@ int main(){
   float rate= 1e-3;
   //Backtracking
   for (int i=0; i<800; ++i) {
-  
+      //Approxiamating the derivative 
       float dcost = (cost_func(w+eps)-cost_func(w))/eps; 
       printf("Weight:%f , Cost:%f , iteration:%d\n",w,cost_func(w),i);
+    //Increases weight if first order derivative is -ve and Decreases if it is +ve
       w -= rate*dcost;
   }
 

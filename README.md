@@ -23,4 +23,5 @@ This repository contains a basic implementation of a neural network from scratch
    ```bash
    git clone  https://github.com/Aashish69-96/LearningNeuralNet2024.git
    cd LearningNeuralNet2024
+   cd perceptron
    bash build.sh

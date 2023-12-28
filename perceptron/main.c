@@ -32,18 +32,20 @@ float cost_func(float w){
   return result;
 }
 int main(){
-  srand(time(0));
+  srand(69);
   float w=rand_float()*10.0f;
   float eps= 1e-3;
   float rate= 1e-3;
   //Backtracking
-  for (int i=0; i<800; ++i) {
+  for (int i=0; i<764; i++) {
       //Approxiamating the derivative 
       float dcost = (cost_func(w+eps)-cost_func(w))/eps; 
       printf("Weight:%f , Cost:%f , iteration:%d\n",w,cost_func(w),i);
     //Increases weight if first order derivative is -ve and Decreases if it is +ve
       w -= rate*dcost;
   }
-
+  for (int i=0;i<11; ++i) {
+      printf("%f*%d=%f\n",w,i,w*i);
+  }
   return 0;
 }

@@ -15,7 +15,7 @@ This repository contains a basic implementation of a neural network from scratch
 ### Prerequisites
 
 - [C Compiler](https://gcc.gnu.org/)
-
+---
 ### Build and Run
 
 1. Clone the repository:

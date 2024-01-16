@@ -1,7 +1,5 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 
 //Data
@@ -35,17 +33,20 @@ int main(){
   srand(69);
   float w=rand_float()*10.0f;
   float eps= 1e-3;
-  float rate= 1e-3;
+  float rate= 1e-2;
   //Backtracking
-  for (int i=0; i<764; i++) {
+  for (int i=0; i<72; i++) {
       //Approxiamating the derivative 
       float dcost = (cost_func(w+eps)-cost_func(w))/eps; 
       printf("Weight:%f , Cost:%f , iteration:%d\n",w,cost_func(w),i);
     //Increases weight if first order derivative is -ve and Decreases if it is +ve
       w -= rate*dcost;
   }
+
+  printf("******************GOTCHA*************** \n");
+  printf("Multiplication of the data provided is \n");
   for (int i=0;i<11; ++i) {
-      printf("%f*%d=%f\n",w,i,w*i);
+      printf("%d*%d=%d\n",(int)w,i,(int)w*i);
   }
   return 0;
 }

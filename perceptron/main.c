@@ -48,7 +48,7 @@ int main(){
   printf("Multiplication of the data provided is \n");
   double w1=(int)round(w);
   for (int i=0;i<11; ++i) {
-      printf("%d*%d=%d\n",(int)w1,i,(int)w*i);
+      printf("%d*%d=%d\n",(int)w1,i,(int)w1*i);
   }
   return 0;
 }

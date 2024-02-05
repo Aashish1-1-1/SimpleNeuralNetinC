@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -45,8 +46,9 @@ int main(){
 
   printf("******************GOTCHA*************** \n");
   printf("Multiplication of the data provided is \n");
+  double w1=(int)round(w);
   for (int i=0;i<11; ++i) {
-      printf("%d*%d=%d\n",(int)w,i,(int)w*i);
+      printf("%d*%d=%d\n",(int)w1,i,(int)w*i);
   }
   return 0;
 }

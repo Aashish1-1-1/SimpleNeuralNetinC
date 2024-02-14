@@ -10,7 +10,9 @@ This repository contains a basic implementation of a neural network from scratch
 - **Modularity:** Code is organized into modular components, facilitating easy comprehension and potential extensions.
 - **Comments and Documentation:** Detailed comments and documentation are provided to explain the functioning of each component.
 
-## Getting Started
+## Reference
+From an article [see](https://www.spicelogic.com/Blog/Perceptron-Artificial-Neural-Networks-10)
+From youtube [see](https://www.youtube.com/watch?v=PGSba51aRYU&t=856s)
 
 ### Prerequisites
 
@@ -22,6 +24,4 @@ This repository contains a basic implementation of a neural network from scratch
 
    ```bash
    git clone  https://github.com/Aashish69-96/LearningNeuralNet2024.git
-   cd LearningNeuralNet2024
-   cd perceptron
-   bash build.sh main.c
+   bash build.sh

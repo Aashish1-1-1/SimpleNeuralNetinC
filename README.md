@@ -11,7 +11,7 @@ This repository contains a basic implementation of a neural network from scratch
 - **Comments and Documentation:** Detailed comments and documentation are provided to explain the functioning of each component.
 
 ## Reference
-From an article [see](https://www.spicelogic.com/Blog/Perceptron-Artificial-Neural-Networks-10)
+From an article [see](https://www.spicelogic.com/Blog/Perceptron-Artificial-Neural-Networks-10)<br>
 From youtube [see](https://www.youtube.com/watch?v=PGSba51aRYU&t=856s)
 
 ### Prerequisites

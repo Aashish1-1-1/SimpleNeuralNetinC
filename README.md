@@ -12,8 +12,8 @@ This repository contains a basic implementation of a neural network from scratch
 
 ## Reference
 From an article [see](https://www.spicelogic.com/Blog/Perceptron-Artificial-Neural-Networks-10)<br>
-From youtube [see](https://www.youtube.com/watch?v=PGSba51aRYU&t=856s)
-
+From youtube [see](https://www.youtube.com/watch?v=PGSba51aRYU&t=856s)<br>
+File handeling [see](https://www.programiz.com/c-programming/c-file-input-output)
 ### Prerequisites
 
 - [C Compiler](https://gcc.gnu.org/)

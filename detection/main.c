@@ -1,22 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 struct trainingdata {
   double widthheightratio;
   double lightreflectio;
 };
-
+//Declaring data globally which can be used by every func I do think oop way would be better but it's okay 
 struct trainingdata human[4];
 struct trainingdata car[4];
+double expectedhuman=0;//0 for human 
+double expectedcar=1;//1 for car
+double learningrate=0.1;//learningrate
 
-double expectedhuman=0;
-double expectedcar=1;
-double learningrate=0.1;
+
+
 
 void populate(){
   FILE *file;
-  file = fopen("human.csv", "r");
+  file = fopen("./data/human.csv", "r");//opening data file in read mode 
   char line[100];
   int i = 0;
   while (fgets(line, sizeof(line), file) != NULL) {
@@ -24,7 +25,7 @@ void populate(){
     i++;
   }
   
-  file = fopen("car.csv","r");
+  file = fopen("./data/car.csv","r");
   i=0;
   while (fgets(line,sizeof(line),file)!=NULL) {
     sscanf(line, "%lf,%lf",&(car[i].widthheightratio),&(car[i].lightreflectio));
@@ -33,10 +34,16 @@ void populate(){
   fclose(file);
 }
 
+
+
+//Generates reandom nums 0-1
 float rand_float(){
   return ((float)rand()/(float) RAND_MAX);
 }
-float activation(double input){
+
+
+
+float activation(double input){//activation func in this cenerio
   if(input>0.5){
     return 1.00;
   }
@@ -44,6 +51,9 @@ float activation(double input){
     return 0;
   }
 }
+
+
+//Model training using delta rule 
 void trainondata(double *w1,double *w2){
   for(int i=0;i<3;++i){
     double humanresult=*w1*human[i].widthheightratio+*w2*human[i].lightreflectio;
@@ -72,8 +82,11 @@ void trainondata(double *w1,double *w2){
       printf("All set\n");
     }
   }
-  printf("Finally:%f,%f\n",*w1,*w2);
+  printf("Finally:%f,%f\n",*w1,*w2);//final value of weight
 }
+
+
+
 void Showyourmoves(double *w1,double *w2){
   double widthheight;
   double reflection;
@@ -88,16 +101,21 @@ void Showyourmoves(double *w1,double *w2){
   }
 
 }
+
+
+
 void Learn(){
-  srand(time(0));
-  double w1=rand_float();
+ // srand(69);//random weight
+  double w1=rand_float();//random weight
   double w2=rand_float();
-  printf("initially:%f,%f\n",w1,w2);
+  printf("initially:%f,%f\n",w1,w2);//initial value of weights
   trainondata(&w1,&w1);
   Showyourmoves(&w1,&w2);
 }
+
+
 int main(){
-  populate();
-  Learn();
+  populate();//populate our array of struct 
+  Learn();//Learningprocess
   return 0;
 }
